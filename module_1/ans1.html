@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store Discount Calculator</title>
+</head>
+<body>
+
+    <script>
+        //Question_Number_(01)
+    
+        //function getDiscount recieve amount and after calculation, printing discount with sum of discount and amount.
+        function getDiscount(amount){
+
+            let discount=0,total=0;
+
+            if(amount<50)
+            {
+                total=amount;
+                console.log('$'+discount+' & $'+(total));
+            }
+            else if(amount>=50 && amount<=99)
+            {
+                 discount=Math.round((amount*5)/100);
+                 total=amount+discount;
+                 console.log('$'+discount+' & $'+(total))
+                
+            }
+            else if(amount>=100 && amount<=199)
+            {
+                discount=Math.round((amount*10)/100);
+                total=amount+discount;
+                console.log('$'+discount+' & $'+(total))
+              
+            }
+            else
+            {
+                discount=Math.round((amount*15)/100);
+                total=amount+discount;
+                console.log('$'+discount+' & $'+(total))
+              
+                
+            }
+        }
+
+      //  Manual Input
+      //  let amount=220;
+
+       //user Input
+       let input=window.prompt();
+       let amount=parseInt(input);  
+
+       getDiscount(amount);
+
+
+
+    </script>
+    
+</body>
+</html>

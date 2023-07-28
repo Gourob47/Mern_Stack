@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication Table Generator</title>
+  </head>
+  <body>
+    <script>
+
+      //Question_Number_(03)
+
+      //multiplication table generator function
+      function getMultiplicationTable(num) {
+        for (let i = 1; i <= 10; i++) {
+          let ans = i * num;
+          console.log(i + " X " + num + " = " + ans);
+        }
+      }
+
+    //manual input  
+     /*
+      let manualInput=5;
+      getMultiplicationTable(manualInput);
+    */
+
+
+    //input from user 
+    let input = window.prompt();
+    let num=parseInt(input);    
+    getMultiplicationTable(num);
+    
+    
+    </script>
+  </body>
+</html>
