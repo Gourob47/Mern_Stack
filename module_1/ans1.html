@@ -18,27 +18,27 @@
             if(amount<50)
             {
                 total=amount;
-                console.log('$'+discount+' & $'+(total));
+                console.log('$'+(amount-discount)+' & $'+(total))
             }
             else if(amount>=50 && amount<=99)
             {
                  discount=Math.round((amount*5)/100);
                  total=amount+discount;
-                 console.log('$'+discount+' & $'+(total))
+                 console.log('$'+(amount-discount)+' & $'+(total))
                 
             }
             else if(amount>=100 && amount<=199)
             {
                 discount=Math.round((amount*10)/100);
                 total=amount+discount;
-                console.log('$'+discount+' & $'+(total))
+                console.log('$'+(amount-discount)+' & $'+(total))
               
             }
             else
             {
                 discount=Math.round((amount*15)/100);
                 total=amount+discount;
-                console.log('$'+discount+' & $'+(total))
+                console.log('$'+(amount-discount)+' & $'+(total))
               
                 
             }
