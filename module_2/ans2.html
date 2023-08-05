@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+</head>
+<body>
+
+    <p id="id1">0</p>
+    <button onclick="incrementCounter()">Increment</button>
+    <button onclick="decrementCounter()">Decrement</button>
+    <script>
+
+      //Increment Counter
+       function incrementCounter(){
+         let item= document.getElementById('id1').innerHTML.trim();
+         let count=parseInt(item);
+         count+=1;
+         document.getElementById('id1').innerHTML=count;
+       }
+      //Decrement Counter
+       function decrementCounter(){
+         let item= document.getElementById('id1').innerHTML.trim();
+         let count=parseInt(item);
+         count-=1;
+         document.getElementById('id1').innerHTML=count;
+       }
+    </script>
+</body>
+</html>
