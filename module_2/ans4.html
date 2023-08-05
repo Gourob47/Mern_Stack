@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+
+    
+
+
+    <!-- Fetch Data Using Button -->
+    <!-- <button onclick="FetchData()">Fetch</button> -->
+    
+
+    <script>
+
+        //Data Fetch Using API:
+        //----------------------------------
+
+
+        let URL='https://jsonplaceholder.typicode.com/posts';
+        
+        //Fetch Data Using self Call Function with async await:
+        FetchData();
+        
+        async function FetchData(){
+
+            let data=await fetch(URL);
+            let jsondata=await data.json();
+
+            document.write(JSON.stringify(jsondata))
+           //console.log(JSON.stringify(jsondata));
+        }
+
+    </script>
+    
+</body>
+</html>

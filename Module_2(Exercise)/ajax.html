@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST API TESTING</title>
+  </head>
+  <body>
+    <button onclick="CreateProductApi()">TEST</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+
+      //Get Request
+      function apiTest() {
+        let url = "https://crud.teamrabbil.com/api/v1/ReadProduct";
+        let config = { METHOD: "GET" };
+
+        fetch(url, config)
+          .then((response) => response.json())
+          .then((result) => console.log(result))
+          .then((err) => console.log(err));
+      }
+
+      //create Request
+
+      function CreateProductApi() {
+        let url = "https://crud.teamrabbil.com/api/v1/CreateProduct";
+
+        let data = {
+          IMG: "A",
+          productCOde: "B",
+          ProductName: "C",
+          Qty: "D",
+          TodtaPrice: "E",
+          UnitPrice: "F",
+        };
+
+        let config = {
+          method: "POST",
+          Headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        };
+
+        fetch(url, config)
+          .then((response) => response.json())
+          .then((result) => console.log(result))
+          .then((err) => console.log(err));
+      }
+
+      let URL = "https://crud.teamrabbil.com/api/v1/ReadProduct";
+
+      // Using Fetch Async-Await
+      RequestUsingAsync();
+      async function RequestUsingAsync() {
+        let res = await fetch(URL);
+        let jsonData = await res.json();
+        document.write(JSON.stringify(jsonData));
+      }
+
+      // Using Fetch Primises
+      RequestUsingPromises();
+      function RequestUsingPromises() {
+        fetch(URL)
+          .then((res) => res.json())
+          .then((jsonData) => document.write(JSON.stringify(jsonData)));
+      }
+
+      // Using Axios Async-Await
+      AsyncUsingAxios();
+      async function AsyncUsingAxios() {
+        let res = await axios.get(URL);
+        let jsonData = res.data;
+        document.write(JSON.stringify(jsonData));
+      }
+
+      // Using Axios Promises
+      AxiosUsingPromises();
+      function AxiosUsingPromises() {
+        axios
+          .get(URL)
+          .then((res) => res.data)
+          .then((jsonData) => document.write(JSON.stringify(jsonData)));
+      }
+
+      // Using Axios Promises But Only One Then Block
+      SimpleAxiosGet();
+      function SimpleAxiosGet() {
+        axios.get(URL).then((res) => {
+          let jsonData = res.data;
+          document.write(JSON.stringify(jsonData));
+        });
+      }
+    </script>
+  </body>
+</html>

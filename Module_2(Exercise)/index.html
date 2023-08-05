@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module_2_Exercise</title>
+
+
+    <style>
+      .mystyle{
+        color:blueviolet
+      }
+      .mystyle1{
+        color: black;
+      }
+    </style>
+</head>
+<body onload="Event('Page Loaded')">
+    
+    <button onclick="windowOpen()">open</button>
+    <button onclick="windowClose()">Close</button>
+    <button onclick="promtObj()">Promt</button>
+    <button onclick="confirmObj()">Confirm</button>
+    <!-- <button onclick="timeIntervalObj()">SetTime</button> -->
+    <br>
+
+    <button onclick="Event('onClicked')">onClick</button>
+    <button onmouseover="Event('mouseonover')">mouseOver</button>
+    <button onmouseout="Event('mouseOut')">mouseOut</button>
+
+    <br>
+
+    <input onchange="Event('onchanged')" placeholder="onchange"/>
+    <input onkeydown="Event('keyDown')" placeholder="onKeyDown"/>
+    <input onkeyup="Event('keyUp')" placeholder="onkeyup"/>
+
+    <br>
+
+
+    <h1 id="myid"></h1>
+
+    <h2 class="myclass"></h2>
+    <h2 class="myclass"></h2>
+
+
+    <h3 name="myname"></h3>
+    <h3 name="myname"></h3>
+
+    <h4></h4>
+
+    <button onclick="topics()">topic</button>
+
+    <p></p>
+
+
+    <button onclick="replace()">replace</button>
+
+    <button onclick="openWrite()">open&Write</button>
+
+
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+
+
+    <button onclick="lenOfElement()">Length</button>
+
+    <br>
+
+
+    <input id="num1" placeholder="Enter any number">
+    <input id="num2" placeholder="Enter any number">
+
+
+
+    <button onclick="addItem()">Sum</button>
+
+
+    <h3 id="id1">Hello Gourob</h3>
+
+    <button onclick="addColor()">addColor</button>
+    <button onclick="removeColor()">removeColor</button>
+
+
+
+    <ul id="list">
+       
+    </ul>
+
+    <input id="input1" placeholder="Enter anything">
+
+    <button onclick="createList()">ADD ITEM</button>
+
+
+    <img 
+
+    id="myimage"
+    src=""
+    height="200"
+    width="200"
+    
+    alt="">
+
+    <button onclick="changeAttributes()">changeImage</button>
+
+    <h5>Debnath</h5>
+    <p id="ok">Debnath1</p>
+    <p class="myclass1">Debnath2</p>
+    <p name="myname1">Debnath3</p>
+
+    <button onclick="findElement()">Change</button>
+
+    
+
+
+
+     
+    <script>
+
+      //window Object:
+      //----------------------------------
+
+          function confirmObj()
+          {
+            let data= confirm("are you sure?");
+            document.write(data);
+
+          }
+
+          function promtObj()
+          {
+            let data= prompt("Please Enter with your Data");
+            document.write(data);
+
+          }
+
+          function windowOpen(){
+            open();
+          }
+
+          function windowClose(){
+            close();
+          }
+
+          function timeIntervalObj(){
+
+            setInterval(function(){
+              alert("Hello Gourob");
+            },1000*5);
+          }
+
+          //JS Navigator
+          //---------------------
+
+          let appCodeName=navigator.appCodeName;
+          let appName= navigator.appName;
+          let appVersion= navigator.appVersion;
+          let cookieEnabled= navigator.cookieEnabled;
+          let language= navigator.language;
+          let userAgent= navigator.userAgent;
+          let platform= navigator.platform;
+          let online= navigator.onLine;
+          
+          // document.write(appCodeName+"<br>");
+          // document.write(appName+"<br>");
+          // document.write(appVersion+"<br>");
+          // document.write(cookieEnabled+"<br>");
+          // document.write(language+"<br>");
+          // document.write(userAgent+"<br>");
+          // document.write(platform+"<br>");
+          // document.write(online+"<br>");
+
+     
+
+
+          //js GEOLOCATION
+          //-----------------
+
+          // navigator.geolocation.getCurrentPosition(function(position){
+          //   let altitude= position.coords.altitude;
+          //   let latitude= position.coords.latitude;
+          //   let longitude= position.coords.longitude;
+          //   let speed= position.coords.speed;
+
+          // document.write(altitude+"<br>");
+          // document.write(latitude+"<br>");
+          // document.write(longitude+"<br>");
+          // document.write(speed+"<br>");
+
+
+          // })
+
+
+          //JS Event
+          //------------
+
+          function Event(msg){
+             console.log(msg)
+          }
+
+          
+          // ****DOM
+          //----------------
+
+          let ele= document.getElementById('myid');
+          ele.innerHTML='Very Good'
+
+          
+          let ele1= document.getElementsByClassName('myclass');
+          ele1[0].innerHTML='akkas'
+          ele1[1].innerHTML='bakkas'
+
+          let ele2= document.getElementsByName('myname');
+          ele2[0].innerHTML='chakkas'
+          ele2[1].innerHTML='makkas'
+
+
+          let ele3=document.getElementsByTagName('h4');
+          ele3[0].innerHTML='tag'
+
+         //find domain, title, url ,last modified, cookie
+          function topics()
+          {
+            let domain=document.domain;
+            let title=document.title;
+            let url= document.URL;
+            let lastModified= document.lastModified;
+            let cookie=document.cookie;
+
+            document.getElementsByTagName('p')[0].innerHTML=url;
+          }
+
+
+         //replace existing 
+          function replace()
+          {
+             document.open("text/html","replace");
+             document.write("<h2>Hello Gourob</h2>")
+             document.close();
+          }
+          //open new file and write
+          function openWrite()
+          {
+             let w=window.open();
+             w.document.open();
+             w.document.write("Hello World");
+             w.document.close();
+          }
+
+          //count length of element
+
+          function lenOfElement()
+          {
+             let x=document.getElementsByTagName('p');
+             document.getElementsByTagName('p')[0].innerHTML=x.length;
+
+          }
+
+          //take input from user and working with dom
+
+          function addItem(){
+            let x= document.getElementById('num1').value;
+            let y=document.getElementById('num2').value;
+
+            let z=parseInt(x)+parseInt(y);
+            alert(z);
+          }
+
+
+          //change css element with dom:
+          //-------------------------------------
+
+
+          function addColor(){
+             let x=document.getElementById('id1');
+             x.classList.add('mystyle');
+          }
+
+          function removeColor(){
+             let x=document.getElementById('id1');
+             x.classList.add('mystyle1');
+          }
+
+          //create new item and append to the list using dom
+          //-----------------------------------------------
+
+          function createList(){
+            let item= document.getElementById('input1').value
+            let mylist= document.getElementById('list')
+            let li=document.createElement('li');
+            li.innerHTML=item;
+            mylist.appendChild(li);
+
+          }
+
+          //Function that change html Attributes
+
+          function changeAttributes(){
+
+            let myimg= document.getElementById('myimage');
+            myimg.src=''
+            myimg.height=400
+            myimg.width=400
+
+          }
+
+          //USing query Selector for finding element
+
+          function findElement(){
+              
+             document.querySelector('h5').innerHTML='Debnath Manupulated';//Access Tag
+             document.querySelector('#ok').innerHTML='Debnath1 Manupulated';//Access Id
+             document.querySelector('.myclass1').innerHTML="Debnath2 Manupulated"//Access Class
+             document.querySelector('p[name=myname1]').innerHTML="Debnath3 Manupulated"//name Manupulated
+          }
+
+
+
+      
+
+
+
+
+    </script>
+</body>
+</html>
