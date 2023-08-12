@@ -1,0 +1,22 @@
+{
+  "name": "mern_stack",
+  "version": "1.0.0",
+  "description": "Mern Stack Projects and Module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gourob47/Mern_Stack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gourob47/Mern_Stack/issues"
+  },
+  "homepage": "https://github.com/Gourob47/Mern_Stack#readme",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
