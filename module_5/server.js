@@ -23,7 +23,7 @@ let server= http.createServer((req,res)=>{
     }
     else if(req.url=='/file-write')
     {
-        fs.writeFile('demo.txt','Hello World',(err)=>{
+        fs.writeFile('module_5/demo.txt','Hello World',(err)=>{
             if(!err)
             {
                 res.writeHead(200,{'Content-Type':'text/html'})
