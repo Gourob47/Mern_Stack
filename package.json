@@ -4,7 +4,7 @@
   "description": "Mern Stack Projects and Module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon module_5/server.js"
   },
   "repository": {
     "type": "git",
