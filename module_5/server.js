@@ -1,13 +1,24 @@
 const http= require('http');
 const fs=require('fs');
-
+const URL= require('url');
 let server= http.createServer((req,res)=>{
 
     if(req.url=='/')
     {
+        let sampleUrl="https://www.w3schools.com/nodejs/nodejs_http.asp";
+        let urlObj= URL.parse(sampleUrl,true);
+        
+        let hostName=urlObj.hostname;
+        let searchName=urlObj.search;
+        let pathName=urlObj.pathname;
+
+        //return http response
         res.writeHead(200,{'Content-Type':'text/html'})
-        res.write('This is Home Page');
+        res.write(`hostName:${hostName}, searchName: ${searchName}, pathName: ${pathName}`);
         res.end();
+        // res.writeHead(200,{'Content-Type':'text/html'})
+        // res.write('This is Home Page');
+        // res.end();
     }
     else if(req.url=='/about')
     {

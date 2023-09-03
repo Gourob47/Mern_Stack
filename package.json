@@ -4,7 +4,7 @@
   "description": "Mern Stack Projects and Module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon module_5/server.js"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/Gourob47/Mern_Stack#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
     "nodemon": "^3.0.1"
   }
 }
